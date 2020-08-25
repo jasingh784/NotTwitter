@@ -1,23 +1,26 @@
 <%- include('./partials/header'); %>
 
-<div style="margin: auto; margin-top: 100px; float: center;">
-    <i class="fas fa-dove fa-3x" style="color: #f2331d;"></i>
-    <br>
-    <h4><b>Log in to Not Twitter</b> </h4>
-    <br><br>
-    <form action="/login" method="POST">
-        <div class="form-group" style="width: 50%;">
-            <label for="Username">Username</label>
-            <input type="text" class="form-control" id="username" name="username">
-        </div>
-        <div class="form-group" style="width: 50%;">
-            <label for="password">Password</label>
-            <input type="password" class="form-control" id="password" name="password">
-        </div>
-        
-        <button type="submit" class="btn btn-outline-primary rounded-pill btn-block" style="width: 50%;">Log in</button>
-        </form>
+<div class="row" style="margin-top: 100px;">
+    <div class="w-50 mx-auto">
+        <i class="fas fa-dove fa-3x" style="color: #f2331d;"></i>
+        <br>
+        <h4><b>Log in to Not Twitter</b> </h4>
+        <br><br>
+        <form action="/login" method="POST">
+            <div class="form-group"">
+                <label for="handle">handle</label>
+                <input type="text" class="form-control" id="username" name="handle">
+            </div>
+            <div class="form-group"">
+                <label for="password">Password</label>
+                <input type="password" class="form-control" id="password" name="password">
+            </div>
+            
+            <button type="submit" class="btn btn-outline-primary rounded-pill btn-block">Log in</button>
+            </form>
+    </div>
 </div>
+
 
 
 <%- include('./partials/footer'); %>

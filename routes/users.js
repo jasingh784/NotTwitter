@@ -1,9 +1,34 @@
 const express = require('express');
+const passport = require('passport');
 const router = express.Router();
+const User = require('../models/users');
 
-router.get('/', (req, res) => {
-    res.render('index');
-})
+router.get('/login', (req, res) => {
+    res.render('login');
+});
+
+router.get('/register', (req, res) => {
+    res.render('register');
+});
+
+//register handle
+router.post('/register', (req, res) => {
+    let newUser = new User({
+        firstname: req.body.firstname,
+        lastname: req.body.lastname,
+        username: req.body.username,
+        email: req.body.email,
+    });
+    User.register(newUser, req.body.password, (err, user) => {
+        if(err) {
+            console.log(err);
+            return res.render("register");
+        }
+        passport.authenticate('local')(req, res, () => {
+            res.redirect('/dashboard');
+        });
+    });
+});
 
 
 

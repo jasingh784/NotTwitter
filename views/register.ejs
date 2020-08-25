@@ -1,35 +1,41 @@
 <%- include('./partials/header'); %>
 
-<div style="margin: auto; margin-top: 100px; float: center;">
-    <i class="fas fa-dove fa-3x" style="color: #f2331d;"></i>
-    <br>
-    <h4><b>Sign Up</b> </h4>
-    <br><br>
-    <form action="/register" method="POST">
-        <div class="form-group" style="width: 50%;">
-            <label for="firstname">First Name</label>
-            <input type="text" class="form-control" id="firstname" name="firstname">
-        </div>
-        <div class="form-group" style="width: 50%;">
-            <label for="lastname">Last Name</label>
-            <input type="text" class="form-control" id="lastname" name="lastname">
-        </div>
-        <div class="form-group" style="width: 50%;">
-            <label for="email">Email</label>
-            <input type="email" class="form-control" id="email" name="email">
-        </div>
-        <div class="form-group" style="width: 50%;">
-            <label for="Username">Username</label>
-            <input type="text" class="form-control" id="username" name="username">
-        </div>
-        <div class="form-group" style="width: 50%;">
-            <label for="password">Password</label>
-            <input type="password" class="form-control" id="password" name="password">
-        </div>
-        
-        <button type="submit" class="btn btn-outline-primary rounded-pill btn-block" style="width: 50%;">Sign Up</button>
-        </form>
+<div class="row" style="margin-top: 100px;">
+    <div class="w-50 mx-auto">
+        <i class="fas fa-dove fa-3x" style="color: #f2331d;"></i>
+        <br>
+        <h4><b>Sign Up</b> </h4>
+        <br><br>
+        <form action="/users/register" method="POST">
+            <div class="form-group">
+                <label for="firstname">First Name</label>
+                <input type="text" class="form-control" id="firstname" name="firstname">
+            </div>
+            <div class="form-group">
+                <label for="lastname">Last Name</label>
+                <input type="text" class="form-control" id="lastname" name="lastname">
+            </div>
+            <div class="form-group">
+                <label for="email">Email</label>
+                <input type="email" class="form-control" id="email" name="email">
+            </div>
+            <div class="form-group">
+                <label for="username">Username</label>
+                <input type="text" class="form-control" id="username" name="username">
+            </div>
+            <div class="form-group">
+                <label for="password">Password</label>
+                <input type="password" class="form-control" id="password" name="password">
+            </div>
+            <div class="form-group">
+                <label for="password2">Confirm Password</label>
+                <input type="password" class="form-control" id="password2" name="password2">
+            </div>
+            <button type="submit" class="btn btn-outline-primary rounded-pill btn-block">Sign Up</button>
+            </form>
+    </div>
 </div>
+
 
 
 <%- include('./partials/footer'); %>
