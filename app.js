@@ -1,6 +1,7 @@
 const express = require('express');
 const mongoose = require('mongoose');
 const passport = require('passport');
+const bodyParser = require('body-parser');
 const LocalStrategy = require('passport-local').Strategy;
 const User = require('./models/users');
 
@@ -32,7 +33,7 @@ mongoose.connect(db, {
 .catch( err => console.log(err.message));
 
 app.set("view engine", "ejs");
-app.use(express.urlencoded({extended: false}));
+app.use(bodyParser.urlencoded({extended: false}));
 
 app.use('/', require('./routes/index.js'));
 app.use('/users', require('./routes/users'));

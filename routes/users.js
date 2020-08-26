@@ -3,6 +3,8 @@ const passport = require('passport');
 const router = express.Router();
 const User = require('../models/users');
 
+
+
 router.get('/login', (req, res) => {
     res.render('login');
 });
@@ -30,6 +32,12 @@ router.post('/register', (req, res) => {
     });
 });
 
+router.post('/login', 
+    passport.authenticate('local', { failureRedirect : '/users/login' }),
+    (req, res) => {
+        console.log(req.user);
+        res.render('dashboard');
+})
 
 
 
